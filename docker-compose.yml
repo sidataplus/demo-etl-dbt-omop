@@ -1,0 +1,21 @@
+##
+#  This compose file is used for local development and adapter testing only.
+#  See `/docker` for a generic and production-ready docker file
+##
+
+version: "3.5"
+services:
+
+  dbt:
+    #build: .
+    build:
+      context: ./dockerfiles
+      dockerfile: dbt.Dockerfile
+    command: --version
+    volumes:
+      - ./dbt:/usr/app
+    working_dir: /usr/app
+
+networks:
+  default:
+    name: omop-dbt
