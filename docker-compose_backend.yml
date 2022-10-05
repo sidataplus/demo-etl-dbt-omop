@@ -284,6 +284,7 @@ services:
   ###
   warehouse:
     image: postgres:13
+    hostname: ohdsi_lakehouse
     environment:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin
@@ -291,7 +292,7 @@ services:
     ports:
       - 5678:5432
     volumes:
-      - ./warehouse:/var/lib/postgresql/data
+      - ./lakehouse:/var/lib/postgresql/data
     restart: unless-stopped
 
 
@@ -301,4 +302,4 @@ volumes:
 
 networks:
   default:
-    name: omop-dbt
+    name: ohdsi-2022-hub

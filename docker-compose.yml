@@ -13,9 +13,10 @@ services:
       dockerfile: dbt.Dockerfile
     command: --version
     volumes:
-      - ./dbt:/usr/app
-    working_dir: /usr/app
+      - ./dbt:/usr/app/
+      - ./dbt_profile:/root/.dbt/
+    #working_dir: /usr/app
 
 networks:
   default:
-    name: omop-dbt
+    name: ohdsi-2022-hub

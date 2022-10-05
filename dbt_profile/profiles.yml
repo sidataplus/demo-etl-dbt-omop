@@ -1,0 +1,18 @@
+etl_synthea_dbt:
+  target: omop
+  outputs:
+    omop:
+      type: postgres
+      host: ohdsi_lakehouse
+      user: admin
+      password: admin
+      port: 5432
+      dbname: synthea1k
+      schema: cdm
+      threads: 4
+      keepalives_idle: 0 # default 0, indicating the system default. See below
+      connect_timeout: 10 # default 10 seconds
+      retries: 1 # default 1 retry on error/timeout when opening connections
+      # search_path: [optional, override the default postgres search_path]
+      # role: [optional, set the role dbt assumes when executing queries]
+      # sslmode: [optional, set the sslmode used to connect to the database]
