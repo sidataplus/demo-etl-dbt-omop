@@ -12,6 +12,8 @@ services:
       context: ./dockerfiles
       dockerfile: dbt.Dockerfile
     command: --version
+    ports:
+      - '888:8080' # Only for docs server --> Terminal/CMD > docker-compose run --service-ports dbt docs serve
     volumes:
       - ./dbt:/usr/app/
       - ./dbt_profile:/root/.dbt/

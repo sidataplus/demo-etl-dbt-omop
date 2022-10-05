@@ -1,4 +1,4 @@
-FROM apache/airflow:2.4.1
+FROM apache/airflow:2.3.2
 USER root
 
 RUN apt-get update \
@@ -6,6 +6,6 @@ RUN apt-get update \
         curl
 
 # Install dbt via pip
-RUN python -m pip install --no-cache-dir dbt-core==1.2.2 dbt-postgres==1.2.2 PyYAML==6.0
+#RUN python -m pip install --no-cache-dir dbt-core==1.2.2 dbt-postgres==1.2.2 PyYAML==6.0
 
-USER airflow
+#USER airflow
