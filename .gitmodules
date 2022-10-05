@@ -1,4 +1,4 @@
-[submodule "dbt"]
+[submodule "ETL-Synthea-dbt"]
 	path = dbt
 	url = git@github.com:sidataplus/ETL-Synthea-dbt.git
 	branch = ohdsi-2022
