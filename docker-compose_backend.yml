@@ -185,6 +185,7 @@
         volumes:
           - ./lakehouse:/var/lib/postgresql/data
         restart: unless-stopped
+        shm_size: '2gb'
       
 
     volumes:
